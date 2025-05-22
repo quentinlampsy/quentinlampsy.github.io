@@ -4,15 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quentin Lam's Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        main {
+            padding: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 0.5rem 0;
+        }
+        ul li a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+        .social-links {
+            margin-top: 1rem;
+        }
+        .social-links a {
+            margin-right: 1rem;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+        .photo-gallery {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .photo-gallery img {
+            height: 200px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Tak Kwan Quentin Lam's Personal Website</h1>
-    <p>Here is my resume:</p>
-    <ul>
-        <li><a href="Resume Quentin Lam.pdf">Full-version PDF</a></li>
-        <li><a href="Resume Quentin Lam 1-Page.pdf">Short-version PDF</a></li>
-    </ul>
-    <p>Here is a photo of me:</p>
-    <img src="./pictures/Profile Image.jpg" alt="Photo of Quentin Lam" width="300" height="400">
+    <header>
+        <h1>Welcome to Tak Kwan Quentin Lam's Personal Website</h1>
+    </header>
+    <main>
+        <p>Here is my resume:</p>
+        <ul>
+            <li><a href="Resume Quentin Lam.pdf" target="_blank">Full-version PDF</a></li>
+            <li><a href="Resume Quentin Lam 1-Page.pdf" target="_blank">Short-version PDF</a></li>
+        </ul>
+        <p>
+
+        <div class="social-links">
+            <h2>Connect with me:</h2>
+            <a href="mailto:quentinlam.Arbeit@gmail.com" target="_blank">Email:quentinlam.Arbeit@gmail.com</a>
+            <a href="https://www.researchgate.net/profile/Tak-Kwan-Lam?ev=hdr_xprf" target="_blank">ResearchGate</a>
+            <a href="https://github.com/quentinlampsy" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/tak-kwan-lam-307917283/" target="_blank">LinkedIn</a>
+            <a href="https://x.com/QuentinLampsy" target="_blank">Twitter</a>
+            <a href="https://bsky.app/profile/quentinhk.bsky.social" target="_blank">Bluesky</a>
+            
+        </div>
+
+        <div class="photo-gallery">
+            <h2>Photo Gallery:</h2>
+            <img src="./pictures/Profile Image.jpg" alt="Travel photo">
+            <img src="./pictures/Family Photo.jpg" alt="Family photo">
+            <img src="./pictures/Selfie half body.jpg" alt="Selfie">
+        </div>
+    </main>
 </body>
 </html>
