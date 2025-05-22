@@ -38,6 +38,15 @@
         ul li a:hover {
             text-decoration: underline;
         }
+        .resume-links a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+        .resume-links a:hover {
+            text-decoration: underline;
+        }
         .social-links {
             margin-top: 1rem;
         }
@@ -66,12 +75,14 @@
         <h1>Welcome to Tak Kwan Quentin Lam's Personal Website</h1>
     </header>
     <main>
-        <p>Here is my resume:</p>
-        <ul>
-            <li><a href="Resume Quentin Lam.pdf" target="_blank">Full-version PDF</a></li>
-            <li><a href="Resume Quentin Lam 1-Page.pdf" target="_blank">Short-version PDF</a></li>
-        </ul>
-        <p>
+        <div class="Resume">
+            <h2 style="display:inline;">Here is my resume: </h2>
+            <span class="resume-links">
+                <a href="Resume Quentin Lam.pdf" target="_blank">Full-version PDF</a>
+                &nbsp;|&nbsp;
+                <a href="Resume Quentin Lam 1-Page.pdf" target="_blank">Short-version PDF</a>
+            </span>
+        </div>
 
         <div class="social-links">
             <h2>Connect with me:</h2>
@@ -86,9 +97,11 @@
 
         <div class="photo-gallery">
             <h2>Photo Gallery:</h2>
-            <img src="./pictures/Profile Image.jpg" alt="Travel photo">
-            <img src="./pictures/Family Photo.jpg" alt="Family photo">
-            <img src="./pictures/Selfie half body.jpg" alt="Selfie">
+            <ul>
+                <img src="./pictures/Profile Image.jpg" alt="Travel photo">
+                <img src="./pictures/Family Photo.jpg" alt="Family photo">
+                <img src="./pictures/Selfie half body.jpg" alt="Selfie">
+            </ul>
         </div>
     </main>
 </body>
