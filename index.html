@@ -32,14 +32,14 @@
             margin: 0.5rem 0;
         }
         ul li a {
-            color: #4CAF50;
+            color: #006400;
             text-decoration: none;
         }
         ul li a:hover {
             text-decoration: underline;
         }
         .resume-links a {
-            color: #4CAF50;
+            color: #006400;
             text-decoration: none;
             margin-left: 0.5rem;
             margin-right: 0.5rem;
@@ -47,54 +47,116 @@
         .resume-links a:hover {
             text-decoration: underline;
         }
-        .social-links {
+        .Social-links {
             margin-top: 1rem;
         }
-        .social-links a {
+        .Social-links a {
             margin-right: 1rem;
-            color: #4CAF50;
+            color: #006400;
             text-decoration: none;
         }
-        .social-links a:hover {
+        .Social-links a:hover {
             text-decoration: underline;
         }
-        .photo-gallery {
+        /* Fixed class name to match HTML */
+        .Photo-gallery {
+            margin-top: 1rem;
+        }
+        .Photo-gallery h2 {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .Photo-gallery ul {
             display: flex;
             overflow-x: auto;
             gap: 1rem;
+            padding: 0;
+        }
+        .Photo-gallery img {
+            height: 250px;
+            border-radius: 8px;
+        }
+        /* Fixed class name to match HTML */
+        .Certificate {
             margin-top: 1rem;
         }
-        .photo-gallery img {
-            height: 200px;
+        .Certificate h2 {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .Certificate ul {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            padding: 0;
+        }
+        .Certificate img {
+            height: 250px;
             border-radius: 8px;
         }
-        .certificate {
-        display: flex;
-        overflow-x: auto;
-        gap: 1rem;
-        margin-top: 1rem;
+        
+        /* Image zoom modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            cursor: pointer;
         }
-        .certificate img {
-            height: 400px;
-            border-radius: 8px;
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+        
+        /* Make images clickable */
+        .Photo-gallery img, .Certificate img {
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Tak Kwan Quentin Lam's Personal Website</h1>
+        <h1>Welcome to Tak Kwan Quentin Lam's Website</h1>
     </header>
     <main>
         <div class="Resume">
             <h2 style="display:inline;">Here is my resume: </h2>
             <span class="resume-links">
-                <a href="Resume Quentin Lam.pdf" target="_blank">Full-version PDF</a>
+                <a href="Resume Quentin Lam.pdf" target="_blank">Full-version</a>
                 &nbsp;|&nbsp;
-                <a href="Resume Quentin Lam 1-Page.pdf" target="_blank">Short-version PDF</a>
+                <a href="Resume Quentin Lam 1-Page.pdf" target="_blank">Short-version</a>
             </span>
         </div>
 
-        <div class="social-links">
+        <div class="Social-links">
             <h2>Connect with me:</h2>
             <a href="mailto:quentinlam.Arbeit@gmail.com" target="_blank">Email:quentinlam.Arbeit@gmail.com</a>
             <a href="https://www.researchgate.net/profile/Tak-Kwan-Lam?ev=hdr_xprf" target="_blank">ResearchGate</a>
@@ -105,7 +167,7 @@
             
         </div>
 
-        <div class="photo-gallery">
+        <div class="Photo-gallery">
             <h2>Photo Gallery:</h2>
             <ul>
                 <img src="./pictures/Profile Image.jpg" alt="Travel photo">
@@ -114,13 +176,47 @@
             </ul>
         </div>
 
-        <div class="certificate">
+        <div class="Certificate">
             <h2>Certificate:</h2>
             <ul>
                 <img src="./pictures/IELTS 2025.jpg" alt="IELTS">
                 <img src="./pictures/MBCT training.jpg" alt="MBCT">
+                <img src="./pictures/Deutsch A1.png" alt="A1 German">
             </ul>
         </div>
     </main>
+<!-- Add this before closing </body> tag --> 
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="expandedImg">
+</div>
+
+<script>
+    // Get the modal
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("expandedImg");
+    const closeBtn = document.getElementsByClassName("close")[0];
+    
+    // Get all images with clickable classes
+    const images = document.querySelectorAll(".Photo-gallery img, .Certificate img");
+    
+    // Add click event to each image
+    images.forEach(img => {
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+    });
+    
+    // Close the modal when clicking the × button
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    // Close the modal when clicking anywhere on it
+    modal.onclick = function() {
+        modal.style.display = "none";
+    }
+</script>
 </body>
 </html>
