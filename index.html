@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quentin Lam - Master Student of Philosophy in Psychology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #64748b;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #e2e8f0;
+            --success: #10b981;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            animation: wave 10s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        header .subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--primary);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Main Container */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+        
+        /* Section Styling */
+        section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.6s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        section h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        /* Resume Section */
+        .Resume {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .resume-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .resume-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .resume-links a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+        
+        .resume-links a::before {
+            content: '📄';
+            font-size: 1.2rem;
+        }
+        
+        /* Social Links */
+        .Social-links {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-grid a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: white;
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 12px;
+            border: 2px solid var(--gray);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .social-grid a:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+        
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        /* Photo Gallery */
+        .Photo-gallery ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .Photo-gallery li {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .Photo-gallery li:hover {
+            transform: scale(1.05);
+        }
+        
+        .Photo-gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            cursor: pointer;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .Photo-gallery li:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Certificate Section */
+        .Certificate ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .Certificate li {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            background: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .Certificate li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .Certificate img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            cursor: pointer;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+        
+        .Certificate li:hover img {
+            opacity: 0.9;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(5px);
+            cursor: pointer;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s ease;
+        }
+        
+        @keyframes zoomIn {
+            from { transform: translateY(-50%) scale(0.8); opacity: 0; }
+            to { transform: translateY(-50%) scale(1); opacity: 1; }
+        }
+        
+        .close {
+            position: fixed;
+            top: 30px;
+            right: 45px;
+            color: #f1f1f1;
+            font-size: 50px;
+            font-weight: 300;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 1001;
+            user-select: none;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            text-align: center;
+            color: var(--secondary);
+            backdrop-filter: blur(10px);
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            section {
+                padding: 2rem 1.5rem;
+            }
+            
+            main {
+                padding: 2rem 1rem;
+            }
+            
+            .Photo-gallery ul,
+            .Certificate ul {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Scroll Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">&lt;/QuentinLam&gt;</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#connect">Connect</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header id="home">
+        <div class="hero-content">
+            <h1>Tak Kwan Quentin Lam</h1>
+            <p class="subtitle">Computer Science Student | Researcher | Developer</p>
+            <a href="#resume" class="cta-button">View My Work</a>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Resume Section -->
+        <section class="Resume" id="resume">
+            <h2>📄 Resume</h2>
+            <p style="color: var(--secondary); margin-bottom: 1.5rem;">Download my professional resume in your preferred format:</p>
+            <div class="resume-links">
+                <a href="Resume Quentin Lam.pdf" target="_blank" rel="noopener">Full Version</a>
+                <a href="Resume Quentin Lam 1-Page.pdf" target="_blank" rel="noopener">One-Page Version</a>
+            </div>
+        </section>
+
+        <!-- Social Links Section -->
+        <section class="Social-links" id="connect">
+            <h2>🌐 Connect With Me</h2>
+            <p style="color: var(--secondary); margin-bottom: 1.5rem;">Let's collaborate! Reach out through any of these platforms:</p>
+            <div class="social-grid">
+                <a href="mailto:quentinlam.Arbeit@gmail.com" rel="noopener">
+                    <span class="social-icon">✉️</span>
+                    <span>quentinlam.Arbeit@gmail.com</span>
+                </a>
+                <a href="https://github.com/quentinlampsy" target="_blank" rel="noopener">
+                    <span class="social-icon">💻</span>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/tak-kwan-lam-307917283/" target="_blank" rel="noopener">
+                    <span class="social-icon">💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://scholar.google.com/citations?user=Sx-kJsAAAAAJ&hl=en" target="_blank" rel="noopener">
+                    <span class="social-icon">🎓</span>
+                    <span>Google Scholar</span>
+                </a>
+                <a href="https://www.researchgate.net/profile/Tak-Kwan-Lam?ev=hdr_xprf" target="_blank" rel="noopener">
+                    <span class="social-icon">🔬</span>
+                    <span>ResearchGate</span>
+                </a>
+                <a href="https://x.com/QuentinLampsy" target="_blank" rel="noopener">
+                    <span class="social-icon">🐦</span>
+                    <span>Twitter / X</span>
+                </a>
+                <a href="https://bsky.app/profile/quentinhk.bsky.social" target="_blank" rel="noopener">
+                    <span class="social-icon">🦋</span>
+                    <span>Bluesky</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Photo Gallery
+        <section class="Photo-gallery" id="gallery">
+            <h2>📸 Photo Gallery</h2>
+            <p style="color: var(--secondary); margin-bottom: 1.5rem;">A glimpse into my life and experiences</p>
+            <ul>
+                <li><img src="./pictures/Profile Image.jpg" alt="Profile photo" loading="lazy"></li>
+                <li><img src="./pictures/Family Photo.jpg" alt="Family photo" loading="lazy"></li>
+                <li><img src="./pictures/Selfie half body.jpg" alt="Portrait" loading="lazy"></li>
+            </ul>
+        </section> -->
+
+        <!-- Certificates -->
+        <section class="Certificate" id="certificates">
+            <h2>🏆 Certificates & Achievements</h2>
+            <p style="color: var(--secondary); margin-bottom: 1.5rem;">Professional certifications and accomplishments</p>
+            <ul>
+                <li><img src="./pictures/IELTS 2025.jpg" alt="IELTS Certificate 2025" loading="lazy"></li>
+                <li><img src="./pictures/MHFA certificate.jpg" alt="Mental Health First Aid Certificate" loading="lazy"></li>
+                <li><img src="./pictures/MBCT training.jpg" alt="MBCT Training Certificate" loading="lazy"></li>
+                <li><img src="./pictures/Deutsch A1.png" alt="German A1 Certificate" loading="lazy"></li>
+            </ul>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Tak Kwan Quentin Lam. All rights reserved.</p>
+        <p>Built with passion for Computer Science 💙</p>
+    </footer>
+<!-- Add this before closing </body> tag --> 
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="expandedImg">
+</div>
+
+<script>
+    // Get the modal
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("expandedImg");
+    const closeBtn = document.getElementsByClassName("close")[0];
+    
+    // Get all images with clickable classes
+    const images = document.querySelectorAll(".Photo-gallery img, .Certificate img");
+    
+    // Add click event to each image
+    images.forEach(img => {
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+    });
+    
+    // Close the modal when clicking the × button
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    // Close the modal when clicking anywhere on it
+    modal.onclick = function() {
+        modal.style.display = "none";
+    }
+</script>
+</body>
+</html>
