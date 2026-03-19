@@ -31,7 +31,9 @@ jobs:
         run: |
           cd portfolio-nextjs
           rm -f package-lock.json
-          npm install
+          npm cache clean --force
+          npm install --include=optional
+          npm rebuild @tailwindcss/oxide
 
       - name: Build Next.js app
         run: |
