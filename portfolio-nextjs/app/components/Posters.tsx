@@ -1,29 +1,69 @@
 'use client';
 
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 
 export default function Posters() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [zoom, setZoom] = useState(1);
-  const imgRef = useRef<HTMLImageElement>(null);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const isDragging = useRef(false);
+  const dragStart = useRef({ x: 0, y: 0 });
+  const panAtDragStart = useRef({ x: 0, y: 0 });
+
+  // Lock / unlock body scroll when modal opens or closes
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [selectedImage]);
 
   const openModal = (src: string) => {
     setSelectedImage(src);
     setZoom(1);
+    setPan({ x: 0, y: 0 });
   };
 
   const closeModal = () => {
     setSelectedImage(null);
     setZoom(1);
+    setPan({ x: 0, y: 0 });
   };
 
-  const handleWheel = useCallback((e: React.WheelEvent) => {
+  // Wheel: zoom around cursor position
+  const handleWheel = useCallback((e: React.WheelEvent<HTMLDivElement>) => {
     e.stopPropagation();
     e.preventDefault();
     setZoom(prev => {
       const delta = e.deltaY < 0 ? 0.15 : -0.15;
-      return Math.min(Math.max(prev + delta, 0.5), 5);
+      const next = Math.min(Math.max(prev + delta, 0.5), 8);
+      // If zooming back to 1 reset pan
+      if (next <= 1) setPan({ x: 0, y: 0 });
+      return next;
     });
+  }, []);
+
+  // Drag to pan
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    if (e.button !== 0) return;
+    e.preventDefault();
+    isDragging.current = true;
+    dragStart.current = { x: e.clientX, y: e.clientY };
+    panAtDragStart.current = pan;
+  }, [pan]);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isDragging.current) return;
+    setPan({
+      x: panAtDragStart.current.x + (e.clientX - dragStart.current.x),
+      y: panAtDragStart.current.y + (e.clientY - dragStart.current.y),
+    });
+  }, []);
+
+  const handleMouseUp = useCallback(() => {
+    isDragging.current = false;
   }, []);
 
   const posters = [
@@ -72,39 +112,45 @@ export default function Posters() {
       {/* Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 animate-fade-in"
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center animate-fade-in"
           onClick={closeModal}
         >
           {/* Close button */}
           <button
-            className="absolute top-4 right-4 text-white text-4xl font-light hover:text-cyan-400 transition-colors z-10"
+            className="absolute top-4 right-4 text-white text-4xl font-light hover:text-cyan-400 transition-colors z-10 select-none"
             onClick={closeModal}
           >
             ×
           </button>
 
-          {/* Zoom hint */}
+          {/* Zoom / pan hint */}
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-sm select-none pointer-events-none">
-            Scroll to zoom · {Math.round(zoom * 100)}%
+            Scroll to zoom · drag to pan · {Math.round(zoom * 100)}%
           </div>
 
-          {/* Image wrapper — stops click-to-close when clicking the image */}
+          {/* Interaction layer */}
           <div
-            className="overflow-auto max-w-full max-h-[90vh] flex items-center justify-center"
+            className="absolute inset-0 flex items-center justify-center overflow-hidden"
             onClick={(e) => e.stopPropagation()}
             onWheel={handleWheel}
-            style={{ cursor: zoom > 1 ? 'grab' : 'zoom-in' }}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            style={{ cursor: isDragging.current ? 'grabbing' : zoom > 1 ? 'grab' : 'zoom-in' }}
           >
             <img
-              ref={imgRef}
               src={selectedImage}
               alt="Enlarged view"
-              className="rounded-lg shadow-2xl transition-transform duration-150"
+              draggable={false}
+              className="rounded-lg shadow-2xl select-none"
               style={{
-                transform: `scale(${zoom})`,
+                transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,
                 transformOrigin: 'center center',
                 maxWidth: '90vw',
                 maxHeight: '90vh',
+                transition: isDragging.current ? 'none' : 'transform 0.1s ease',
+                userSelect: 'none',
               }}
             />
           </div>
