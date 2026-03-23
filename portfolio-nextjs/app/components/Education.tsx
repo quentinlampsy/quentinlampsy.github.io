@@ -21,7 +21,7 @@ export default function Education() {
       },
     },
     {
-      university: 'The Chinese University of Hong Kong',
+      university: 'Chinese University of Hong Kong',
       logo: '/pictures/cuhk-logo.png',
       degree: 'Master of Philosophy in Psychology',
       period: '2025.8 - 2027.6',
