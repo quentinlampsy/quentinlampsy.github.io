@@ -13,8 +13,8 @@ const geistMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Quentin Lam - Computer Science Student",
-  description: "Portfolio website of Tak Kwan Quentin Lam - Computer Science Student, Researcher, and Developer. View my projects, research, and connect with me.",
+  title: "Quentin Lam - MPhil Student in Psychology",
+  description: "Portfolio website of Tak Kwan Quentin Lam - MPhil Student in Psychology, Researcher, and Developer. View my projects, research, and connect with me.",
 };
 
 export default function RootLayout({
