@@ -48,6 +48,7 @@ export default function Navbar() {
               { label: 'Connect', id: 'connect' },
               { label: 'Gallery', id: 'gallery' },
               { label: 'Certificates', id: 'certificates' },
+              { label: 'Posters', id: 'posters' },
             ].map((item) => (
               <button
                 key={item.id}

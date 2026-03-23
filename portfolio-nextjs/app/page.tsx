@@ -2,6 +2,7 @@ import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Education from './components/Education';
 import Publications from './components/Publications';
+import Posters from './components/Posters';
 import Resume from './components/Resume';
 import SocialLinks from './components/SocialLinks';
 import PhotoGallery from './components/PhotoGallery';
@@ -16,6 +17,7 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
         <Education />
         <Publications />
+        <Posters />
         <Resume />
         <SocialLinks />
         <PhotoGallery />

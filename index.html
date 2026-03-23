@@ -362,6 +362,42 @@
             opacity: 0.9;
         }
         
+        /* Poster Gallery */
+        .Poster ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .Poster li {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            background: white;
+            transition: transform 0.3s ease;
+        }
+
+        .Poster li:hover {
+            transform: scale(1.05);
+        }
+
+        .Poster img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            cursor: pointer;
+            display: block;
+            transition: transform 0.3s ease;
+            background: #f8fafc;
+        }
+
+        .Poster li:hover img {
+            transform: scale(1.03);
+        }
+
         /* Modal */
         .modal {
             display: none;
@@ -443,7 +479,8 @@
             }
             
             .Photo-gallery ul,
-            .Certificate ul {
+            .Certificate ul,
+            .Poster ul {
                 grid-template-columns: 1fr;
             }
             
@@ -478,6 +515,7 @@
                 <li><a href="#connect">Connect</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#posters">Posters</a></li>
             </ul>
         </div>
     </nav>
@@ -564,6 +602,17 @@
                 <li><img src="./pictures/Deutsch%20A2.png" alt="German A2 Certificate" loading="lazy"></li>
             </ul>
         </section>
+
+        <!-- Poster Section -->
+        <section class="Poster" id="posters">
+            <h2>🖼️ Posters</h2>
+            <p style="color: var(--secondary); margin-bottom: 1.5rem;">Conference and research posters</p>
+            <ul>
+                <li><img src="./pictures/ARWA%202026%20poster.png" alt="ARWA 2026 Poster" loading="lazy"></li>
+                <li><img src="./pictures/CPC%202025%20poster.png" alt="CPC 2025 Poster" loading="lazy"></li>
+                <li><img src="./pictures/SSSR%202024%20poster.png" alt="SSSR 2024 Poster" loading="lazy"></li>
+            </ul>
+        </section>
     </main>
     
     <!-- Footer -->
@@ -584,7 +633,7 @@
     const closeBtn = document.getElementsByClassName("close")[0];
     
     // Get all images with clickable classes
-    const images = document.querySelectorAll(".Photo-gallery img, .Certificate img");
+    const images = document.querySelectorAll(".Photo-gallery img, .Certificate img, .Poster img");
     
     // Add click event to each image
     images.forEach(img => {
