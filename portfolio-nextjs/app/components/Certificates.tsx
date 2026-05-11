@@ -10,7 +10,9 @@ export default function Certificates() {
     { src: '/pictures/MHFA certificate.jpg', alt: 'Mental Health First Aid Certificate' },
     { src: '/pictures/MBCT training.jpg', alt: 'MBCT Training Certificate' },
     { src: '/pictures/Deutsch A1.png', alt: 'German A1 Certificate' },
-    { src: '/pictures/Deutsch A2.png', alt: 'German A2 Certificate' }
+    { src: '/pictures/Deutsch A2.png', alt: 'German A2 Certificate' },
+    { src: '/pictures/sh course certif.png', alt: 'Sexual Harassment Course Certificate' },
+    { src: '/pictures/TA course complete.png', alt: 'Teaching Assistant Certificate' }
   ];
 
   return (
