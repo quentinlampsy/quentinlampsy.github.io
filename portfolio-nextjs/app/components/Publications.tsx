@@ -8,11 +8,10 @@ export default function Publications() {
   const publications = [
     {
       image: '/pictures/My JEMR F2.png',
-      title: 'JEMR Article',
+      title: 'Initial and sustained attentional bias toward emotional faces in MDD',
       doi: 'https://www.mdpi.com/1995-8692/18/6/72',
       description:
-        'Initial and sustained attentional bias toward emotional faces in MDD. \
-        This eye-tracking study examines how people with major depressive disorder \
+        'This eye-tracking study examines how people with major depressive disorder \
         attend to emotional faces over time. Rather than treating attention as a single \
         process, it separates early orienting from later sustained looking. The most engaging \
         result is that emotional faces, especially fearful faces, captured early gaze, \
@@ -23,44 +22,42 @@ export default function Publications() {
     },
     {
       image: '/pictures/Huo BP figure 4.png',
-      title: 'BP Article',
+      title: 'Development of EEG alpha and theta oscillations in working memory',
       doi: 'https://doi.org/10.1016/j.biopsycho.2024.108824',
-      description: "Development of EEG alpha and theta oscillations in working memory. This paper \
-      asks how the brain's working-memory system matures from childhood to adulthood. Using EEG during \
-      an n-back task, the study separates “true” theta and alpha oscillations from broader background \
-      brain activity. The most interesting finding is developmental: adults increased midfrontal theta \
-      power when memory load became higher, but children did not show this mature load-sensitive theta \
-      response. At the same time, both groups showed alpha changes with load, suggesting that different \
-      oscillatory systems mature at different rates. This work highlights how working-memory development \
-      is not only about better behavior, but also about changing neural strategies.",
+      description: "This paper asks how the brain's working-memory system matures from childhood to \
+      adulthood. Using EEG during an n-back task, the study separates “true” theta and alpha oscillations \
+      from broader background brain activity. The most interesting finding is developmental: adults \
+      increased midfrontal theta power when memory load became higher, but children did not show this \
+      mature load-sensitive theta response. At the same time, both groups showed alpha changes with load\
+      , suggesting that different oscillatory systems mature at different rates. This work highlights \
+      how working-memory development is not only about better behavior, but also about changing neural strategies.",
     },
     {
       image: '/pictures/Li MP F2.png',
-      title: 'MP Paper',
+      title: 'Reduced attention to human eyes in Shank3 mutant beagle dogs',
       doi: 'https://www.nature.com/articles/s41380-025-02965-7',
-      description: "Reduced attention to human eyes in Shank3 mutant beagle dogs. This paper uses an unusual \
-      and powerful model: laboratory beagle dogs carrying a Shank3 mutation associated with autism. With eye-tracking, \
-      the study shows that mutant dogs spent less proportional viewing time on human eyes than wild-type dogs, \
-      while their attention to dog faces was not similarly reduced. A gaze-cueing experiment further suggests \
-      that this pattern reflects active avoidance of human eyes rather than simply failing to notice them. \
-      Oxytocin also increased looking toward human eyes in mutant dogs. The study is striking because it connects \
+      description: "This paper uses an unusual and powerful model: laboratory beagle dogs carrying a Shank3 \
+      mutation associated with autism. With eye-tracking, the study shows that mutant dogs spent less \
+      proportional viewing time on human eyes than wild-type dogs, while their attention to dog faces \
+      was not similarly reduced. A gaze-cueing experiment further suggests that this pattern reflects \
+      active avoidance of human eyes rather than simply failing to notice them. Oxytocin also increased \
+      looking toward human eyes in mutant dogs. The study is striking because it connects \
       genes, social attention, and a potentially modifiable behavior in a naturalistic social animal.",
     },
     {
       image: '/pictures/su IJBR F3.png',
-      title: 'ML Paper',
+      title: 'Dynamic patterns of affect-biased attention in children and its relationship with parenting',
       doi: 'https://journals.sagepub.com/doi/full/10.1177/01650254231207596',
-      description: "Dynamic patterns of affect-biased attention in children and its relationship with parenting. This \
-      paper asks a simple but important question: when children look at emotional faces, how does their attention \
-      unfold over time? Using eye-tracking during a dot-probe task, the study shows that reaction time alone missed \
-      children's affect-biased attention, whereas gaze data revealed clear patterns. Children looked longer overall \
+      description: "This paper asks a simple but important question: when children look at emotional faces, how does their \
+      attention unfold over time? Using eye-tracking during a dot-probe task, the study shows that reaction time alone \
+      missed children's affect-biased attention, whereas gaze data revealed clear patterns. Children looked longer overall \
       at angry and happy faces than neutral faces, but the most interesting finding comes from the time-course analysis: \
       attention to emotional faces emerged very early after face presentation, even for sad faces, but this bias did not \
       remain constant. Only happy faces attracted attention again later. The study also identified three subgroups of \
       children with different dynamic gaze patterns—weak decay, strong decay, and recovery—and used machine learning to \
-      show that positive parenting was related to children’s temporal attention patterns toward sad faces. The highlight \
+      show that positive parenting was related to children's temporal attention patterns toward sad faces. The highlight \
       of this paper is methodological and developmental: attention bias is not just “more looking” or “less looking,” but \
-      a dynamic process shaped over time and potentially linked to children’s family environment.",
+      a dynamic process shaped over time and potentially linked to children's family environment.",
     },
   ];
 
