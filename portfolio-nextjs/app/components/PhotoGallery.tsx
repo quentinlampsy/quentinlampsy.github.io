@@ -7,9 +7,9 @@ export default function PhotoGallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const photos = [
-    { src: '/pictures/Profile Image.jpg', alt: 'Profile photo' },
-    { src: '/pictures/Family Photo.jpg', alt: 'Family photo' },
-    { src: '/pictures/Selfie half body.jpg', alt: 'Portrait' },
+    { src: '/pictures/Profile%20Image.jpg', alt: 'Profile photo' },
+    { src: '/pictures/Family%20Photo.jpg', alt: 'Family photo' },
+    { src: '/pictures/Selfie%20half%20body.jpg', alt: 'Portrait' },
   ];
 
   return (

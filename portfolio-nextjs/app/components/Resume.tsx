@@ -13,7 +13,7 @@ export default function Resume() {
       </p>
       <div className="flex flex-wrap gap-4">
         <a
-          href="/Resume Quentin Lam.pdf"
+          href="/Resume%20Quentin%20Lam.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
@@ -34,7 +34,7 @@ export default function Resume() {
           <span>Full Version</span>
         </a>
         <a
-          href="/Resume Quentin Lam 2-Page.pdf"
+          href="/Resume%20Quentin%20Lam%202-Page.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
@@ -55,7 +55,7 @@ export default function Resume() {
           <span>Two-Page Version</span>
         </a>
         <a
-          href="/Resume Quentin Lam 1-Page.pdf"
+          href="/Resume%20Quentin%20Lam%201-Page.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"

@@ -6,14 +6,14 @@ export default function Certificates() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const certificates = [
-    { src: '/pictures/IELTS 2025.jpg', alt: 'IELTS Certificate 2025' },
-    { src: '/pictures/MHFA certificate.jpg', alt: 'Mental Health First Aid Certificate' },
-    { src: '/pictures/MBCT training.jpg', alt: 'MBCT Training Certificate' },
-    { src: '/pictures/Deutsch A1.png', alt: 'German A1 Certificate' },
-    { src: '/pictures/Deutsch A2.png', alt: 'German A2 Certificate' },
-    { src: '/pictures/sh course certif.png', alt: 'Sexual Harassment Course Certificate' },
-    { src: '/pictures/TA course complete.jpg', alt: 'Teaching Assistant Certificate' },
-    { src: '/pictures/PKU exchange certificate.jpg', alt: 'PKU Exchange Certificate' }
+    { src: '/pictures/IELTS%202025.jpg', alt: 'IELTS Certificate 2025' },
+    { src: '/pictures/MHFA%20certificate.jpg', alt: 'Mental Health First Aid Certificate' },
+    { src: '/pictures/MBCT%20training.jpg', alt: 'MBCT Training Certificate' },
+    { src: '/pictures/Deutsch%20A1.png', alt: 'German A1 Certificate' },
+    { src: '/pictures/Deutsch%20A2.png', alt: 'German A2 Certificate' },
+    { src: '/pictures/sh%20course%20certif.png', alt: 'Sexual Harassment Course Certificate' },
+    { src: '/pictures/TA%20course%20complete.jpg', alt: 'Teaching Assistant Certificate' },
+    { src: '/pictures/PKU%20exchange%20certificate.jpg', alt: 'PKU Exchange Certificate' }
   ];
 
   return (

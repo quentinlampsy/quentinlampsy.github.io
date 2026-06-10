@@ -67,9 +67,9 @@ export default function Posters() {
   }, []);
 
   const posters = [
-    { src: '/pictures/ARWA 2026 poster.png', alt: 'ARWA 2026 Poster' },
-    { src: '/pictures/CPC 2025 poster.png', alt: 'CPC 2025 Poster' },
-    { src: '/pictures/SSSR 2024 poster.png', alt: 'SSSR 2024 Poster' },
+    { src: '/pictures/ARWA%202026%20poster.png', alt: 'ARWA 2026 Poster' },
+    { src: '/pictures/CPC%202025%20poster.png', alt: 'CPC 2025 Poster' },
+    { src: '/pictures/SSSR%202024%20poster.png', alt: 'SSSR 2024 Poster' },
   ];
 
   return (

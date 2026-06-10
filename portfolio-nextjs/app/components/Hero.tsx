@@ -17,17 +17,17 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/80 via-purple-600/80 to-indigo-700/80 z-10"></div>
         
         {/* Scrolling Background */}
-        <div className="absolute inset-0 flex animate-scroll-bg">
+        <div className="absolute inset-0 animate-scroll-bg">
           <div
-            className="min-w-full h-full bg-cover bg-center"
+            className="w-1/2 h-full bg-cover bg-center inline-block"
             style={{
-              backgroundImage: "url('/pictures/Family Photo.jpg')",
+              backgroundImage: "url('/pictures/Family%20Photo.jpg')",
             }}
           ></div>
           <div
-            className="min-w-full h-full bg-cover bg-center"
+            className="w-1/2 h-full bg-cover bg-center inline-block"
             style={{
-              backgroundImage: "url('/pictures/Family Photo.jpg')",
+              backgroundImage: "url('/pictures/Family%20Photo.jpg')",
             }}
           ></div>
         </div>

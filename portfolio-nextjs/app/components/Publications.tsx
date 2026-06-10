@@ -7,7 +7,7 @@ export default function Publications() {
 
   const publications = [
     {
-      image: '/pictures/My JEMR F2.png',
+      image: '/pictures/My%20JEMR%20F2.png',
       title: 'Initial and sustained attentional bias toward emotional faces in MDD',
       doi: 'https://www.mdpi.com/1995-8692/18/6/72',
       description:
@@ -21,7 +21,7 @@ export default function Publications() {
         bias may be better understood by asking when attention is altered, not only what emotion it is directed toward.',
     },
     {
-      image: '/pictures/Huo BP figure 4.png',
+      image: '/pictures/Huo%20BP%20figure%204.png',
       title: 'Development of EEG alpha and theta oscillations in working memory',
       doi: 'https://doi.org/10.1016/j.biopsycho.2024.108824',
       description: "This paper asks how the brain's working-memory system matures from childhood to \
@@ -33,7 +33,7 @@ export default function Publications() {
       how working-memory development is not only about better behavior, but also about changing neural strategies.",
     },
     {
-      image: '/pictures/Li MP F2.png',
+      image: '/pictures/Li%20MP%20F2.png',
       title: 'Reduced attention to human eyes in Shank3 mutant beagle dogs',
       doi: 'https://www.nature.com/articles/s41380-025-02965-7',
       description: "This paper uses an unusual and powerful model: laboratory beagle dogs carrying a Shank3 \
@@ -45,7 +45,7 @@ export default function Publications() {
       genes, social attention, and a potentially modifiable behavior in a naturalistic social animal.",
     },
     {
-      image: '/pictures/su IJBR F3.png',
+      image: '/pictures/su%20IJBR%20F3.png',
       title: 'Dynamic patterns of affect-biased attention in children and its relationship with parenting',
       doi: 'https://journals.sagepub.com/doi/full/10.1177/01650254231207596',
       description: "This paper asks a simple but important question: when children look at emotional faces, how does their \

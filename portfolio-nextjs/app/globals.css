@@ -68,7 +68,7 @@ html {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
@@ -86,6 +86,8 @@ html {
 
 .animate-scroll-bg {
   animation: scroll-bg 30s linear infinite;
+  width: 200%;
+  display: flex;
 }
 
 .animation-delay-2000 {
