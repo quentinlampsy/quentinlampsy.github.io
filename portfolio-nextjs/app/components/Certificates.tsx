@@ -12,7 +12,8 @@ export default function Certificates() {
     { src: '/pictures/Deutsch A1.png', alt: 'German A1 Certificate' },
     { src: '/pictures/Deutsch A2.png', alt: 'German A2 Certificate' },
     { src: '/pictures/sh course certif.png', alt: 'Sexual Harassment Course Certificate' },
-    { src: '/pictures/TA course complete.jpg', alt: 'Teaching Assistant Certificate' }
+    { src: '/pictures/TA course complete.jpg', alt: 'Teaching Assistant Certificate' },
+    { src: '/pictures/PKU exchange certificate.jpg', alt: 'PKU Exchange Certificate' }
   ];
 
   return (
