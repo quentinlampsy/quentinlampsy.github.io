@@ -22,7 +22,7 @@ export default function Publications() {
         bias may be better understood by asking when attention is altered, not only what emotion it is directed toward.',
     },
     {
-      image: '/pictures/BP article.png',
+      image: '/pictures/Huo BP figure 4.png',
       title: 'BP Article',
       doi: 'https://doi.org/10.1016/j.biopsycho.2024.108824',
       description: "Development of EEG alpha and theta oscillations in working memory. This paper \
