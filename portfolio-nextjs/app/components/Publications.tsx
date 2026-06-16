@@ -7,6 +7,26 @@ export default function Publications() {
 
   const publications = [
     {
+      image: '/pictures/My%20DS%20F2.png.png',
+      title: 'Posterior Periodic Alpha Power as a Neural Marker of Early Biliteracy Skills: \
+      The Mediating Role of Rapid Automatized Naming in Chinese-English Bilingual Children',
+      doi: 'https://doi.org/10.64898/2026.06.10.731265',
+      description:
+        'This preprint explores why some Chinese-English bilingual children develop stronger \
+        reading and spelling skills than others. The study focuses on resting-state EEG, \
+        especially posterior alpha activity, a brain rhythm linked to timing and coordination \
+        across neural systems. A key advance is that the paper separates “true” periodic alpha \
+        oscillations from broader aperiodic background activity, because traditional alpha power \
+        can mix these signals together. In 121 Hong Kong children from Grades 1 to 5, stronger \
+        posterior periodic alpha power predicted better Chinese word reading, Chinese dictation, \
+        English word reading, and English dictation. Importantly, these associations were partly \
+        explained by Chinese digit rapid automatized naming, a task that captures how efficiently \
+        children can visually scan, access familiar symbols, and name them quickly. The highlight \
+        of this work is that a resting brain signal was linked to literacy across two very different \
+        writing systems, suggesting that posterior alpha may reflect a shared neural foundation \
+        for fast, coordinated learning-related processing.',
+    },
+    {
       image: '/pictures/My%20JEMR%20F2.png',
       title: 'Initial and sustained attentional bias toward emotional faces in MDD',
       doi: 'https://www.mdpi.com/1995-8692/18/6/72',

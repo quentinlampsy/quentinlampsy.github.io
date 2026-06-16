@@ -8,8 +8,8 @@ export default function PhotoGallery() {
 
   const photos = [
     { src: '/pictures/Profile%20Image.jpg', alt: 'Profile photo' },
-    { src: '/pictures/Family%20Photo.jpg', alt: 'Family photo' },
-    { src: '/pictures/Selfie%20half%20body.jpg', alt: 'Portrait' },
+    { src: '/pictures/ARWA%20conferences%202025.jpg', alt: 'ARWA conferences 2025' },
+    { src: '/pictures/ARWA%20with%20Urs.jpg', alt: 'ARWA with Urs' },
   ];
 
   return (
