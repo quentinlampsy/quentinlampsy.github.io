@@ -7,7 +7,7 @@ export default function Publications() {
 
   const publications = [
     {
-      image: '/pictures/My%20DS%20F2.png.png',
+      image: '/pictures/My%20DS%20F2.png',
       title: 'Posterior Periodic Alpha Power as a Neural Marker of Early Biliteracy Skills: \
       The Mediating Role of Rapid Automatized Naming in Chinese-English Bilingual Children',
       doi: 'https://doi.org/10.64898/2026.06.10.731265',
